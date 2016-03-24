@@ -39,7 +39,6 @@ $('.overlay').click(function(){
   	feedback = $('#feedback');
   	countElement = $('#count');
   	guessList = $('#guessList');
-  	guessDiff = Math.abs(targetNumber - userGuess)
   	submitButt = form.find('input[type=submit]');
 
 
@@ -129,12 +128,12 @@ function play() {
 	function giveFeedback(){
 		if (targetNumber == userGuess){
 			winner();
-		} else if(guessDiff < 10){
+		} else if(Math.abs(targetNumber - userGuess) < 10){
 			userFeedback = 'Fiery!'; 
 			//userFeedback.addClass(fiery);
-		} else if(guessDiff < 20 && guessDiff > 9){
+		} else if(Math.abs(targetNumber - userGuess) < 20 && Math.abs(targetNumber - userGuess) > 9){
 			userFeedback = 'Hot';
-		} else if(guessDiff < 30 && guessDiff > 19){
+		} else if(Math.abs(targetNumber - userGuess) < 30 && Math.abs(targetNumber - userGuess) > 19){
 			userFeedback = 'Lukewarm'; //userFeedback.addClass(lukewarm);
 		} else {
 			userFeedback = 'Cold';//userFeedback.addClass(cold);
