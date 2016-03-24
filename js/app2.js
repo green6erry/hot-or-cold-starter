@@ -13,11 +13,6 @@ var guessCount = 0;
 var guessInput = $('#userGuess');
 var feedback, targetValue;
 
-// Where variable information is going to be put in the DOM
-// $('#guessList').html(guessList);
-// $('#count').html(guessCount);
-// $('#feedback').html(feedback);
-
 // To start
 guessInput.focus();
 
@@ -100,7 +95,7 @@ function qualifyGuess() {
         alert("Oops! We're looking for an integer between 1 and 100.");
         return;
     }
-    else if(guessInput.val() ==)
+    else if(guessInput.val() ==){}
 
 
     else {
