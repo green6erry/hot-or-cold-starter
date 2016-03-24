@@ -32,9 +32,6 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(500);
   	});
 
-  	$("new").click(function() {
-
-  	});
 
   	// end of stuff given by clone start
 
