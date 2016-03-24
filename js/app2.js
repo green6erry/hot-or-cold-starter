@@ -1,3 +1,5 @@
+
+$(document).ready(function(){
 // Directions
 $('a.what').click(function(){
 	$('.overlay').fadeIn(500);
@@ -12,11 +14,6 @@ var guessList = [];
 var guessCount = 0;
 var guessInput = $('#userGuess');
 var feedback, targetValue;
-
-// Where variable information is going to be put in the DOM
-// $('#guessList').html(guessList);
-// $('#count').html(guessCount);
-// $('#feedback').html(feedback);
 
 // To start
 guessInput.focus();
@@ -43,6 +40,9 @@ function newGame(){
 }
 
 newGame();
+$('.new').on("click", function(event){
+	newGame();
+});
 
 function wonGame(){
 	feedback = 'Yay you did it!';
@@ -92,7 +92,7 @@ function qualifyGuess() {
     }
 
     else if (guessInput.val() < 0) {
-        alert("mmOops! That number below 1. Please enter a number somewhere in between 1 and 100.");
+        alert("Oops! That number below 1. Please enter a number somewhere in between 1 and 100.");
         return;
     }
 
@@ -100,7 +100,7 @@ function qualifyGuess() {
         alert("Oops! We're looking for an integer between 1 and 100.");
         return;
     }
-    else if(guessInput.val() ==)
+    else if(guessInput.val() == 0){}
 
 
     else {
@@ -116,4 +116,4 @@ $('form').submit(function(event){
 
 
 // Key: function is Guess second word, variable is guess first word.
-
+});
