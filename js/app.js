@@ -19,21 +19,6 @@ $(document).ready(function(){
 
 	// (didn't put in 'use strict' yet because I don't know what that is)
 
-// stuff given by clone:
-
-	/*--- Display information modal box ---*/
-  	$(".what").click(function(){
-    	$(".overlay").fadeIn(500);
-
-  	});
-
-  	/*--- Hide information modal box ---*/
-  	$("a.close").click(function(){
-  		$(".overlay").fadeOut(500);
-  	});
-
-
-  	// end of stuff given by clone start
 
 // Fade in the "overlay" with the "what? anchor"
 
@@ -155,7 +140,6 @@ function play() {
 			userFeedback = 'Cold';//userFeedback.addClass(cold);
 		}
 
-
 	}
 
 //trackGuess - to list guesses below
@@ -190,7 +174,6 @@ function play() {
 		submitButt.css('opacity','0');
 
 	}
-
 
 
 // establish a random number - to go within "new game"
