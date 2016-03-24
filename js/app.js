@@ -45,15 +45,15 @@ $('.overlay').click(function(){
 
 $(document).ready(initialize);
 
-	function initialize(){
+function initialize(){
 		startNewGame();
 		newButton.click(startNewGame);
-
-		form.submit(function(event){
-	      event.preventDefault();
-	      play();
-	    });
 	}
+
+form.submit(function(event){
+	event.preventDefault();
+	play();
+});
 	
 	
 function startNewGame(){
