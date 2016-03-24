@@ -95,7 +95,7 @@ function qualifyGuess() {
         alert("Oops! We're looking for an integer between 1 and 100.");
         return;
     }
-    else if(guessInput.val() ==){}
+    else if(guessInput.val() == 0){}
 
 
     else {
