@@ -40,6 +40,9 @@ function newGame(){
 }
 
 newGame();
+$('.new').on("click", function(event){
+	newGame();
+});
 
 function wonGame(){
 	feedback = 'Yay you did it!';
