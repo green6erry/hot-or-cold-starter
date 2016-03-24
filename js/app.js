@@ -136,7 +136,8 @@ function play() {
 		} else if(Math.abs(targetNumber - userGuess) < 30 && Math.abs(targetNumber - userGuess) > 19){
 			userFeedback = 'Lukewarm'; //userFeedback.addClass(lukewarm);
 		} else {
-			userFeedback = 'Cold';//userFeedback.addClass(cold);
+			userFeedback = 'Cold';
+			feedback.addClass('cold');
 		}
 
 	}
