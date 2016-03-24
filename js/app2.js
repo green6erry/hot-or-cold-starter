@@ -1,3 +1,5 @@
+
+$(document).ready(function(){
 // Directions
 $('a.what').click(function(){
 	$('.overlay').fadeIn(500);
@@ -87,7 +89,7 @@ function qualifyGuess() {
     }
 
     else if (guessInput.val() < 0) {
-        alert("mmOops! That number below 1. Please enter a number somewhere in between 1 and 100.");
+        alert("Oops! That number below 1. Please enter a number somewhere in between 1 and 100.");
         return;
     }
 
@@ -111,4 +113,4 @@ $('form').submit(function(event){
 
 
 // Key: function is Guess second word, variable is guess first word.
-
+});
