@@ -76,6 +76,7 @@ function submitGuess() {
 	guessInput.focus(); //bring cursor back to guess input field
 	feedbackGuess();
 	updateDOM();
+	event.preventDefault();
 	}
 
 function qualifyGuess() {
