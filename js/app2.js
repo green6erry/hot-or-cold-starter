@@ -18,15 +18,21 @@ var feedback, targetValue;
 // To start
 guessInput.focus();
 
+function clearEntry(){
+	guessInput.val('');
+	guessInput.focus();
+}
 function resetDOM(){
+	feedback = 'Make your Guess!';
+	$('#feedback').attr('class', '');
 	guessList = [];
 	guessCount = 0;
-	feedback = 'Make your Guess!';
-	guessInput.html('');
-	guessInput.focus();
+	clearEntry();
+
 }
 
 function updateDOM(){
+	event.preventDefault();
 	$('#guessList').html(guessList);
 	$('#count').html(guessCount);
 	$('#feedback').html(feedback);
@@ -46,23 +52,25 @@ $('.new').on("click", function(event){
 
 function wonGame(){
 	feedback = 'Yay you did it!';
+	$('#feedback').attr('class', 'win');
 	$('#guessButton').css('opacity', '0');
 }
 
 function feedbackGuess(){
 		if (targetValue == guessInput.val()){
 			wonGame();
-		} else if(Math.abs(targetValue - guessInput.val()) < 10){
+		} else if(Math.abs(targetValue - guessInput.val()) <= 10){
 			feedback = 'Fiery!'; 
-			$('#feedback').addClass('fiery');
-		} else if(Math.abs(targetValue - guessInput.val()) < 20 && Math.abs(targetValue - guessInput.val()) > 9){
+			$('#feedback').attr('class', 'fiery');
+		} else if(Math.abs(targetValue - guessInput.val()) <= 20 && Math.abs(targetValue - guessInput.val()) >= 11){
 			feedback = 'Hot!';
-		} else if(Math.abs(targetValue - guessInput.val()) < 30 && Math.abs(targetValue - guessInput.val()) > 19){
+			$('#feedback').attr('class', '');
+		} else if(Math.abs(targetValue - guessInput.val()) <= 30 && Math.abs(targetValue - guessInput.val()) >= 21){
 			feedback = 'Lukewarm';
-			$('#feedback').addClass('lukewarm');
+			$('#feedback').attr('class', 'lukewarm');
 		} else {
 			feedback = 'Cold';
-			$('#feedback').addClass('cold');
+			$('#feedback').attr('class', 'cold');
 		}
 
 	}
@@ -77,10 +85,11 @@ function submitGuess() {
 	feedbackGuess();
 	updateDOM();
 	event.preventDefault();
+	clearEntry();
 	}
 
 function qualifyGuess() {
-     
+     event.preventDefault();
        
 
 	if (guessInput.val()%1 === 0 && guessInput.val() > 0 && guessInput.val() < 100) {
@@ -89,24 +98,26 @@ function qualifyGuess() {
 
     else if (guessInput.val() >= 100) {
         alert("Oops! That number is above 100. Please enter a number somewhere in between 1 and 100.");
-        return;
+        clearEntry();
     }
 
     else if (guessInput.val() < 0) {
         alert("Oops! That number below 1. Please enter a number somewhere in between 1 and 100.");
-        return;
+        clearEntry();
     }
 
     else if (guessInput.val()%1 !== 0 && parseInt(guessInput.val())%1 === 0){
         alert("Oops! We're looking for an integer between 1 and 100.");
-        return;
+        clearEntry();
     }
-    else if(guessInput.val() == 0){}
+    else if(guessInput.val() == 0){
+    	clearEntry();
+    }
 
 
     else {
         alert("That has an non-number character in it. Please just put in an integer.");
-        return;
+        clearEntry();
     }
 }
 

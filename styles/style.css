@@ -228,9 +228,16 @@ h2 {
 .cold {background: darkcyan;}
 .lukewarm {background: burlywood;}
 .fiery {background: darkred;}
+.win {background:goldenrod;}
 
+input[type='number'] {
+    -moz-appearance:textfield;
+}
 
-
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
 .game p {
 	margin-top: 0.5em;
 	font-size: 1.8em;
